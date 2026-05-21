@@ -64,6 +64,13 @@ async function main() {
   // Use a renderer so the generated <code> elements include `hljs` and language classes
   const renderer = new marked.Renderer();
 
+  function normalizeBlockSpacing(html) {
+    return html.replace(
+      /(<\/(?:h[1-6]|p|ul|ol|pre|blockquote|table|hr)>)\s*(?=<(?:h[1-6]|p|ul|ol|pre|blockquote|table|hr)\b)/g,
+      '$1\n<br>\n'
+    );
+  }
+
   // Minimal HTML escaper because `marked.escape` may not exist in this version
   function escapeHtml(str) {
     return String(str)
@@ -94,7 +101,10 @@ async function main() {
     return `<pre><code class="${classAttr}">${safeCode}</code></pre>\n`;
   };
 
-  marked.setOptions({ renderer });
+  marked.use({
+    renderer,
+    breaks: true
+  });
 
   const files = globSync('**/*.md', {
     cwd: DOCS_DIR,
@@ -109,7 +119,7 @@ async function main() {
     const fullPath = path.join(DOCS_DIR, file);
     const md = fs.readFileSync(fullPath, 'utf8');
 
-    const htmlBody = marked.parse(md);
+    const htmlBody = normalizeBlockSpacing(marked.parse(md));
 
     // Rewrite relative Markdown links to point to generated .html files.
     // Skip absolute URLs (http/https) so external links to .md are preserved.
