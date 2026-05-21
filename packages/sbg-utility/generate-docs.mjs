@@ -79,8 +79,9 @@ for (const file of sourceFiles) {
       md += docs[0].getDescription() + '\n\n';
     }
 
-    // collect @param descriptions and process selected tags (@example, @deprecated, @see)
+    // collect @param and @returns descriptions and process selected tags (@example, @deprecated, @see)
     const paramDocs = new Map();
+    let returnDoc = null;
     const tags = docs.flatMap((d) => d.getTags());
     for (const tag of tags) {
       const tname = tag.getTagName();
@@ -97,6 +98,8 @@ for (const file of sourceFiles) {
           }
         }
         if (pname) paramDocs.set(pname, formatTagComment(pcomment));
+      } else if (tname === 'returns' || tname === 'return') {
+        returnDoc = formatTagComment(rawComment);
       }
     }
 
@@ -137,8 +140,13 @@ for (const file of sourceFiles) {
 
     md += '\n';
 
-    md += `### Returns\n\n`;
-    md += `\`${normalizeImportPaths(fn.getReturnType().getText())}\`\n\n`;
+    const returnTypeStr = normalizeImportPaths(fn.getReturnType().getText());
+    if (returnDoc) {
+      md += `### Returns\n\n`;
+      md += `\`${returnTypeStr}\` — ${returnDoc}\n\n`;
+    } else {
+      md += `Returns \`${returnTypeStr}\`\n\n`;
+    }
   }
 
   if (anyExported) {
