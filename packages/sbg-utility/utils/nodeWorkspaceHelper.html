@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>utils/nodeWorkspaceHelper.md</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+  <!-- Tailwind (CDN) and Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <article class="prose prose-slate dark:prose-invert">
+      <h1>API Documentation for src/utils/nodeWorkspaceHelper.ts</h1>
+<br>
+<h2>findYarnRootWorkspace</h2>
+<br>
+<p>search yarn root workspace folder</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>ctx</code>: <code>{ base_dir: string; }</code> — option with property <code>base_dir</code></li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>string | null</code></p>
+<br>
+<h2>resolveCommand</h2>
+<br>
+<p>Resolves the path of a command binary from <code>node_modules/.bin</code>.</p>
+<br>
+<p>This function searches for the specified command in various directories, including<br>the current working directory, the module directory, and optionally, user-defined<br>search directories. If the command is not found, it returns the original command name.</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>commandName</code>: <code>string</code> — - The name of the command to resolve.</li>
+<li><code>options</code>: <code>{ searchDir: string | string[]; } | undefined</code> — - Optional parameters for command resolution.</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>string</code></p>
+
+    </article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>if(window.hljs && hljs.highlightAll) hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

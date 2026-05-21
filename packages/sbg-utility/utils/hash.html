@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>utils/hash.md</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+  <!-- Tailwind (CDN) and Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <article class="prose prose-slate dark:prose-invert">
+      <h1>API Documentation for src/utils/hash.ts</h1>
+<br>
+<h2>md5</h2>
+<br>
+<p>PHP MD5 Equivalent</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>data</code>: <code>string | undefined</code></li>
+<li><code>short</code>: <code>number | boolean</code> — If true, returns a shortened (8-char) version of the MD5 hash. If a number, returns that many characters.</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>string | undefined</code></p>
+<br>
+<h2>data_to_hash</h2>
+<br>
+<p>convert data to hash (async)</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>algorithm</code>: <code>&quot;sha1&quot; | &quot;sha256&quot; | &quot;sha384&quot; | &quot;sha512&quot; | &quot;md5&quot;</code></li>
+<li><code>data</code>: <code>string | Buffer&lt;ArrayBufferLike&gt;</code></li>
+<li><code>encoding</code>: <code>&quot;base64&quot; | &quot;hex&quot;</code></li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>Promise&lt;string&gt;</code></p>
+<br>
+<h2>data_to_hash_sync</h2>
+<br>
+<p>convert data to hash (sync)</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>algorithm</code>: <code>&quot;sha1&quot; | &quot;sha256&quot; | &quot;sha384&quot; | &quot;sha512&quot; | &quot;md5&quot;</code></li>
+<li><code>data</code>: <code>string | Buffer&lt;ArrayBufferLike&gt;</code></li>
+<li><code>encoding</code>: <code>&quot;base64&quot; | &quot;hex&quot;</code></li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>string</code></p>
+
+    </article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>if(window.hljs && hljs.highlightAll) hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>symbols/unicode-symbols.md</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+  <!-- Tailwind (CDN) and Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <article class="prose prose-slate dark:prose-invert">
+      <h1>API Documentation for src/symbols/unicode-symbols.ts</h1>
+<br>
+<h2>fetchUnicodeData</h2>
+<br>
+<h3>Parameters</h3>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>Promise&lt;Record&lt;string, import(&quot;./src/symbols/unicode-symbols&quot;).UnicodeSymbol&gt; | undefined&gt;</code></p>
+<br>
+<h2>getUnicodeSymbolByName</h2>
+<br>
+<p>Retrieves the Unicode symbol corresponding to the given name.<br>If the name is an alias, returns the mapped symbol or alias value.<br>Logs a warning if the symbol is not found.</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>name</code>: <code>string</code> — - The name or alias of the Unicode symbol to retrieve.</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>string | undefined</code></p>
+<br>
+<h2>getUnicodeSymbolByNameAsync</h2>
+<br>
+<p>Asynchronously retrieves the Unicode symbol by name using the UnicodeData.txt database.<br>Caches the Unicode data after the first fetch for efficient repeated lookups.</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>name</code>: <code>string</code> — - The Unicode character name (e.g., &#39;GREEK CAPITAL LETTER OMEGA&#39;)</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>Promise&lt;string | undefined&gt;</code></p>
+<br>
+<h2>getUnicodeSymbol</h2>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>name</code>: <code>string</code></li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>Promise&lt;string | undefined&gt;</code></p>
+
+    </article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>if(window.hljs && hljs.highlightAll) hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

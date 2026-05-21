@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>config/_config.md</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+  <!-- Tailwind (CDN) and Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <article class="prose prose-slate dark:prose-invert">
+      <h1>API Documentation for src/config/_config.ts</h1>
+<br>
+<h2>fetchConfig</h2>
+<br>
+<p>find <code>_config.yml</code></p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>fileYML</code>: <code>string | undefined</code> — path to file <code>_config.yml</code> or working directory</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>void</code></p>
+<br>
+<h2>setConfig</h2>
+<br>
+<p>Config setter</p>
+<br>
+<ul>
+<li>useful for jest</li>
+</ul>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>obj</code>: <code>Record&lt;string, any&gt; | import(&quot;./src/config/_config&quot;).ProjConf</code></li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>import(&quot;./src/config/_config&quot;).ProjConf</code></p>
+<br>
+<h2>getConfig</h2>
+<br>
+<p>Config getter</p>
+<br>
+<ul>
+<li>useful for jest</li>
+</ul>
+<br>
+<h3>Parameters</h3>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>import(&quot;./src/config/_config&quot;).ProjConf</code></p>
+<br>
+<h2>deployConfig</h2>
+<br>
+<p>get deployment config</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>{ deployDir: string; }</code></p>
+
+    </article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>if(window.hljs && hljs.highlightAll) hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

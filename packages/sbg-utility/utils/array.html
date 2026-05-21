@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>utils/array.md</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+  <!-- Tailwind (CDN) and Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <article class="prose prose-slate dark:prose-invert">
+      <h1>API Documentation for src/utils/array.ts</h1>
+<br>
+<h2>array_random</h2>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>items</code>: <code>T</code></li>
+<li><code>predicateOrEnsure</code>: <code>boolean | ((item: T[number]) =&gt; boolean) | undefined</code></li>
+<li><code>ensureAllPicked</code>: <code>boolean</code></li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>T[number] | undefined</code></p>
+<br>
+<h2>array_unique</h2>
+<br>
+<p>Remove duplicate values from an array.</p>
+<br>
+<ul>
+<li>Without <code>field</code>, primitive values are deduplicated with strict equality.</li>
+<li>With <code>field</code>, objects are deduplicated by the given property name.</li>
+<li>Empty strings and empty arrays are removed from the result.</li>
+</ul>
+<br>
+<h3>Example</h3>
+<br>
+<pre><code class="hljs language-javascript">import { array_unique } from &#39;sbg-utility&#39;;
+const values = array_unique([&#39;a&#39;, &#39;a&#39;, &#39;&#39;, &#39;b&#39;, &#39;b&#39;]);
+// [&#39;a&#39;, &#39;b&#39;]</code></pre>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>arr</code>: <code>T</code> — array to deduplicate</li>
+<li><code>field</code>: <code>string | undefined</code> — optional key name to deduplicate objects by</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>T</code></p>
+<br>
+<h2>array_remove_empty</h2>
+<br>
+<p>Remove empty values from an array.</p>
+<br>
+<ul>
+<li>Empty strings are removed.</li>
+<li>Empty arrays are removed.</li>
+<li>Empty objects are removed.</li>
+</ul>
+<br>
+<h3>Example</h3>
+<br>
+<pre><code class="hljs language-javascript">import { array_remove_empty } from &#39;sbg-utility&#39;;
+
+const values = array_remove_empty([&#39;a&#39;, &#39;&#39;, [], {}, &#39;b&#39;]);
+// [&#39;a&#39;, &#39;b&#39;]</code></pre>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>arr</code>: <code>T</code> — array to clean</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>any[]</code></p>
+<br>
+<h2>arrayOfObjUniq</h2>
+<br>
+<p>Remove duplicate objects by a field name.</p>
+<br>
+<h3>See</h3>
+<br>
+<p><a href="https://stackoverflow.com/a/67322087/6404439">https://stackoverflow.com/a/67322087/6404439</a></p>
+<br>
+<h3>Example</h3>
+<br>
+<pre><code class="hljs language-javascript">import { arrayOfObjUniq } from &#39;sbg-utility&#39;;
+const values = arrayOfObjUniq(
+  [
+    { id: 1, name: &#39;a&#39; },
+    { id: 1, name: &#39;b&#39; },
+    { id: 2, name: &#39;c&#39; }
+  ],
+  &#39;id&#39;
+);
+// [{ id: 1, name: &#39;a&#39; }, { id: 2, name: &#39;c&#39; }]</code></pre>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>arr</code>: <code>T</code> — array of objects</li>
+<li><code>field</code>: <code>string</code> — key name to deduplicate by</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>T</code></p>
+<br>
+<h2>array_shuffle</h2>
+<br>
+<p>Shuffle an array by sorting with a random comparator.</p>
+<br>
+<p>Note: this mutates the input array.</p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>items</code>: <code>T</code> — array to shuffle (mutated in-place)</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>T</code></p>
+<br>
+<h2>array_shuffle_swap</h2>
+<br>
+<p>Fast in-place shuffle using the Fisher–Yates swap method.</p>
+<br>
+<p>Note: this mutates the input array.</p>
+<br>
+<h3>See</h3>
+<br>
+<p><a href="https://stackoverflow.com/a/65638217/6404439">https://stackoverflow.com/a/65638217/6404439</a></p>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>t</code>: <code>T</code> — array to shuffle (mutated in-place)</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>void</code></p>
+<br>
+<h2>array_flatten</h2>
+<br>
+<p>Flatten a nested array.</p>
+<br>
+<ul>
+<li>Without <code>depth</code>, it fully flattens the array recursively to all nested levels.</li>
+<li>With <code>depth</code>, it uses the provided flatten depth via <code>Array.prototype.flat(depth)</code>.</li>
+</ul>
+<br>
+<h3>Example</h3>
+<br>
+<pre><code class="hljs language-javascript">import { array_flatten } from &#39;sbg-utility&#39;;
+
+// fully flatten (no depth provided)
+const values = array_flatten([1, [2, [3]]]);
+// [1, 2, 3]
+
+// flatten to depth 1
+const oneLevel = array_flatten([1, [2, [3]]], 1);
+// [1, 2, [3]]</code></pre>
+<br>
+<h3>Parameters</h3>
+<br>
+<ul>
+<li><code>arr</code>: <code>T</code> — nested array to flatten</li>
+<li><code>depth</code>: <code>N | undefined</code> — optional flatten depth (when provided, delegates to <code>arr.flat(depth)</code>)</li>
+</ul>
+<br>
+<h3>Returns</h3>
+<br>
+<p><code>FlatArray&lt;T, N&gt;[]</code></p>
+
+    </article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>if(window.hljs && hljs.highlightAll) hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>
