@@ -1,0 +1,6 @@
+**/node_modules
+**/*.tgz
+**/tmp
+**/.yarn*
+**/yarn*.lock
+**/.env*
