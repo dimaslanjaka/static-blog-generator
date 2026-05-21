@@ -1,4 +1,5 @@
 import * as cp from 'cross-spawn';
+import dotenv from 'dotenv';
 import fs from 'fs-extra';
 import { globSync } from 'glob';
 import { marked } from 'marked';
@@ -7,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import nunjucks from 'nunjucks';
 import path from 'upath';
 
+dotenv.config({ override: true, quiet: true });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

@@ -1,8 +1,10 @@
+import dotenv from 'dotenv';
 import fs from 'fs-extra';
 import { Project } from 'ts-morph';
 import path from 'upath';
 import { fileURLToPath } from 'url';
 
+dotenv.config({ override: true, quiet: true });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const docsDir = path.join(__dirname, 'docs');
