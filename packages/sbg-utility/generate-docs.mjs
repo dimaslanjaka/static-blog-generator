@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const docsDir = path.join(__dirname, 'docs');
 fs.emptyDirSync(docsDir);
+const generated = [];
 const project = new Project({
   tsConfigFilePath: './tsconfig.node.json'
 });
@@ -20,7 +21,8 @@ for (const file of sourceFiles) {
     relativePath.replace(/\.(ts|tsx|js|jsx|cjs|mjs)$/, '.md').replace(/src[\\/]/, '')
   );
 
-  let md = `# API Documentation for ${relativePath}\n\n`;
+  const mdTitle = `API Documentation for ${relativePath}`;
+  let md = `# ${mdTitle}\n\n`;
   let anyExported = false;
 
   function formatTagComment(comment) {
@@ -115,5 +117,20 @@ for (const file of sourceFiles) {
   if (anyExported) {
     fs.ensureDirSync(path.dirname(destPath));
     fs.writeFileSync(destPath, md);
+    // record generated doc for index
+    const relLink = './' + path.relative(docsDir, destPath).replace(/\\/g, '/');
+    generated.push({ title: mdTitle, link: relLink, source: relativePath });
   }
+}
+
+// write an index (readme.md) into docs with links to all generated docs
+if (generated.length > 0) {
+  let indexMd = '# API Documentation Index\n\n';
+  indexMd += 'This index links to all generated API documentation pages.\n\n';
+  // sort by title for stable output
+  generated.sort((a, b) => a.title.localeCompare(b.title));
+  for (const g of generated) {
+    indexMd += `- [${g.title}](${g.link}) — Source: ${g.source}\n`;
+  }
+  fs.writeFileSync(path.join(docsDir, 'readme.md'), indexMd);
 }
