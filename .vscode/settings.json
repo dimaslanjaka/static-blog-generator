@@ -1,0 +1,87 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.env.linux": {
+    "DEBUG_PKG": "1",
+    "ESLINT_USE_FLAT_CONFIG": "true",
+    "NUITKA_CACHE_DIR": "${workspaceFolder}/tmp/nuitka-cache",
+    "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:${workspaceFolder}/bin:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/vendor/bin",
+    "PHP_CS_FIXER_IGNORE_ENV": "1",
+    "PUPPETEER_SKIP_DOWNLOAD": "true"
+  },
+  "terminal.integrated.env.windows": {
+    "DEBUG_PKG": "1",
+    "ESLINT_USE_FLAT_CONFIG": "true",
+    "NUITKA_CACHE_DIR": "${workspaceFolder}\\tmp\\nuitka-cache",
+    "PATH": "${env:LOCALAPPDATA}\\nvm;C:\\nvm4w\\nodejs;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\usr\\bin;${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${workspaceFolder}\\vendor\\bin;C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin;C:\\Users\\Dell\\AppData\\Local\\Programs\\Ollama",
+    "PHP_CS_FIXER_IGNORE_ENV": "1",
+    "PUPPETEER_SKIP_DOWNLOAD": "true"
+  },
+  "terminal.integrated.profiles.windows": {
+    "Cygwin": {
+      "args": ["--login", "-i"],
+      "env": {
+        "CHERE_INVOKING": "1"
+      },
+      "path": "C:\\cygwin64\\bin\\bash.exe"
+    },
+    "Command Prompt": {
+      "args": [],
+      "icon": "terminal-cmd",
+      "path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"]
+    },
+    "Short Command Prompt": {
+      "path": ["${env:windir}\\System32\\cmd.exe"],
+      "args": ["/k", "prompt $g"],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "PowerShell": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveAllFilesBeforeRun": true,
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package",
+    "*.test.ts": "cd $workspaceRoot/packages/sbg-utility && npm test -- $fileNameWithoutExt",
+    "*.spec.ts": "cd $workspaceRoot/packages/sbg-utility && npm test -- $fileNameWithoutExt"
+  },
+  "code-runner.showRunIconInEditorTitleMenu": false,
+  "code-runner.showRunCommandInExplorerContextMenu": false,
+  "code-runner.respectShebang": true,
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.preferences.importModuleSpecifier": "relative",
+  "search.exclude": {
+    "**/dist/**": true,
+    "**/tmp/**": true
+  },
+  "files.associations": {
+    "*.njk": "njk",
+    "*.ejs": "html"
+  },
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "njk": "html",
+    "nunjucks": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "njk": "html"
+  },
+  "npm.packageManager": "yarn",
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///d%3A/Repositories/static-blog-generator/.github/workflows/test-beta.yml",
+    "https://json.schemastore.org/dependabot-2.0.json": "file:///d%3A/Repositories/static-blog-generator/.github/dependabot.yml"
+  }
+}
