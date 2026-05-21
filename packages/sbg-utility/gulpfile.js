@@ -52,7 +52,7 @@ const copy = async function () {
     const src = files[i];
     const dest = path.join(__dirname, 'dist', path.basename(src));
     fs.copySync(src, dest, { overwrite: true });
-    console.log('Copied', src.replace(__dirname, ''), '->', dest.replace(__dirname, ''));
+    console.log('Copied', path.relative(__dirname, src), '->', path.relative(__dirname, dest));
   }
 
   // Copy for partial build. See rollup _partial
