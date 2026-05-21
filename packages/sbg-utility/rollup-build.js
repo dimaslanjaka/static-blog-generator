@@ -273,9 +273,4 @@ export default async function build() {
     console.error(colors.red('Build failed:\n'), err);
     process.exit(1);
   });
-  // Uncomment for single-file debug
-  // await compileBoth('src/utils/chain.ts', 'dist/utils/chain').catch((err) => {
-  //   console.error(colors.red('Build failed:\n'), err);
-  //   process.exit(1);
-  // });
 }
