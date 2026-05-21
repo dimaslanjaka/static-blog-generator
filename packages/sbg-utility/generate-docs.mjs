@@ -1,0 +1,119 @@
+import fs from 'fs-extra';
+import { Project } from 'ts-morph';
+import path from 'upath';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const docsDir = path.join(__dirname, 'docs');
+fs.emptyDirSync(docsDir);
+const project = new Project({
+  tsConfigFilePath: './tsconfig.node.json'
+});
+
+const sourceFiles = project.getSourceFiles();
+
+for (const file of sourceFiles) {
+  const relativePath = path.relative(process.cwd(), file.getFilePath());
+  const destPath = path.join(
+    docsDir,
+    relativePath.replace(/\.(ts|tsx|js|jsx|cjs|mjs)$/, '.md').replace(/src[\\/]/, '')
+  );
+
+  let md = `# API Documentation for ${relativePath}\n\n`;
+  let anyExported = false;
+
+  function formatTagComment(comment) {
+    if (comment == null) return '';
+    if (typeof comment === 'string') return comment;
+    try {
+      return JSON.stringify(comment);
+    } catch {
+      return String(comment);
+    }
+  }
+
+  for (const fn of file.getFunctions()) {
+    console.log(`Processing ${relativePath} -> ${fn.getName()}`);
+    if (!fn.isExported()) {
+      console.log(`Skipping non-exported function: ${fn.getName()}`);
+      continue;
+    }
+
+    anyExported = true;
+    const name = fn.getName();
+    const docs = fn.getJsDocs();
+
+    md += `## ${name}\n\n`;
+
+    if (docs.length > 0) {
+      md += docs[0].getDescription() + '\n\n';
+    }
+
+    // collect @param descriptions and process selected tags (@example, @deprecated, @see)
+    const paramDocs = new Map();
+    const tags = docs.flatMap((d) => d.getTags());
+    for (const tag of tags) {
+      const tname = tag.getTagName();
+      const rawComment = typeof tag.getComment === 'function' ? tag.getComment() : undefined;
+      if (tname === 'param') {
+        let pname = typeof tag.getName === 'function' ? tag.getName() : undefined;
+        let pcomment = rawComment;
+        if (!pname) {
+          const text = typeof tag.getText === 'function' ? tag.getText() : '';
+          const m = text.match(/^@param\s+(\S+)\s*([\s\S]*)$/);
+          if (m) {
+            pname = m[1];
+            pcomment = m[2];
+          }
+        }
+        if (pname) paramDocs.set(pname, formatTagComment(pcomment));
+      }
+    }
+
+    for (const tag of tags) {
+      const tname = tag.getTagName();
+      const rawComment = typeof tag.getComment === 'function' ? tag.getComment() : undefined;
+      if (tname === 'example') {
+        md += '### Example\n\n';
+        md += '```ts\n' + formatTagComment(rawComment) + '\n```\n\n';
+      } else if (tname === 'deprecated') {
+        const text = typeof tag.getText === 'function' ? tag.getText() : undefined;
+        const content = text ? text.replace(/^@deprecated\s*/i, '') : formatTagComment(rawComment);
+        md += '### Deprecated\n\n' + content + '\n\n';
+      } else if (tname === 'see') {
+        const text = typeof tag.getText === 'function' ? tag.getText() : undefined;
+        let content = text ? text.replace(/^@see\s*/i, '') : formatTagComment(rawComment);
+        // unwrap {@link ...} and trim stray asterisks/newlines
+        content = content
+          // eslint-disable-next-line no-useless-escape
+          .replace(/\{\@link\s+([^}]+)\}/g, '$1')
+          .replace(/\s*\*\s*$/g, '')
+          .trim();
+        md += '### See\n\n' + content + '\n\n';
+      }
+      // ignore other tags to avoid duplicating param/return sections
+    }
+
+    md += '### Parameters\n\n';
+
+    for (const param of fn.getParameters()) {
+      const pname = param.getName();
+      const ptype = param.getType().getText();
+      const pdesc = paramDocs.get(pname);
+      md += `- \`${pname}\`: \`${ptype}\``;
+      if (pdesc) md += ` — ${pdesc}`;
+      md += `\n`;
+    }
+
+    md += '\n';
+
+    md += `### Returns\n\n`;
+    md += `\`${fn.getReturnType().getText()}\`\n\n`;
+  }
+
+  if (anyExported) {
+    fs.ensureDirSync(path.dirname(destPath));
+    fs.writeFileSync(destPath, md);
+  }
+}
