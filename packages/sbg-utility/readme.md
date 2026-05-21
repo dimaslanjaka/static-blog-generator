@@ -1,7 +1,13 @@
-# static-blog-generator utility
+# static-blog-generator-utility
 
-All collections and helpers nodejs/javascript used by other modules.
+Shared collections and utility helpers for Node.js/JavaScript used across the Static Blog Generator ecosystem.
+
+## Overview
+
+This package provides reusable utilities, helpers, and shared logic used by other modules within the Static Blog Generator project.
 
 ## Documentation
 
-Read documentation on [docs/](docs/)
+Full documentation is available at:
+
+https://dimaslanjaka.github.io/static-blog-generator/packages/sbg-utility/
