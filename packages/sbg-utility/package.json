@@ -137,7 +137,6 @@
     "jest-mock": "^30.0.5",
     "path-browserify": "^1.0.1",
     "prettier": "^3.8.3",
-    "resolve-typescript-plugin": "^2.0.1",
     "rollup": "^4.60.4",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-dts": "^6.2.1",
