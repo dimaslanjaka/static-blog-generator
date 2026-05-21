@@ -183,7 +183,7 @@ jobs:
 
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
-        run: git add release docs
+        run: git add release
 
       - name: 📤 Commit and Push Changes (only sbg-utility)
         working-directory: packages/sbg-utility
