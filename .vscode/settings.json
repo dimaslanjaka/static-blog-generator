@@ -46,20 +46,22 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
+  "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
+  "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": true,
   "code-runner.saveAllFilesBeforeRun": true,
-  "files.exclude": {
-    "**/node_modules": true
-  },
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
-    "*.test.ts": "cd $workspaceRoot/packages/sbg-utility && npm test -- $fileNameWithoutExt",
-    "*.spec.ts": "cd $workspaceRoot/packages/sbg-utility && npm test -- $fileNameWithoutExt"
+    "*.{test,spec}.{ts,js,cjs,mjs}": "yarn test -- $fileNameWithoutExt",
+    "*.{explicit,runner}.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
+    "*.{explicit,runner}.{mjs,cjs,js}": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",
+    "electron-*.ts": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
+    "*.py": "python -u",
+    "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
+    "*.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config"
   },
-  "code-runner.showRunIconInEditorTitleMenu": false,
-  "code-runner.showRunCommandInExplorerContextMenu": false,
   "code-runner.respectShebang": true,
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "js/ts.preferences.importModuleSpecifier": "relative",
@@ -67,14 +69,25 @@
     "**/dist/**": true,
     "**/tmp/**": true
   },
-  "files.associations": {
-    "*.njk": "njk",
-    "*.ejs": "html"
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
   },
-  "emmet.includeLanguages": {
-    "ejs": "html",
-    "njk": "html",
-    "nunjucks": "html"
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
   },
   "emmet.syntaxProfiles": {
     "njk": "html"
