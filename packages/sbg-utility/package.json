@@ -27,7 +27,6 @@
     "prepublish": "npm run clean && npm run build",
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
-    "pretest": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config jest.setup.ts",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand --detectOpenHandles --forceExit --bail",
     "test:coverage": "npm test -- --coverage",
     "lint": "eslint \"src/**/*.ts\" --fix",
