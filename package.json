@@ -107,7 +107,7 @@
     }
   },
   "resolutions": {
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/bf014bd4575004c5d869241b0d7eb092fbe47a06/releases/bin.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/ff700df47d98f3430bb95f2395f69c5282161eb5/releases/bin.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/1ef47aa929ab953bdd7a4b02f067d6b312ba2cde/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/2ed1250d701369b8235a02b9af834bbfc62644a0/release/hexo-shortcodes.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/4975b3788e43d687b6dfc525ad5e3972e5868872/release/cross-spawn.tgz"
