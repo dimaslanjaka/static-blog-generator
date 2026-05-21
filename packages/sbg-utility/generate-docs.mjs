@@ -163,5 +163,8 @@ if (generated.length > 0) {
 }
 
 // Copy rollup-browser-test.html,dist/browser/* to docs
-fs.copySync('rollup-browser-test.html', path.join(docsDir, 'browser', 'rollup-browser-test.html'));
-fs.copySync('dist/browser', path.join(docsDir, 'browser/dist'));
+fs.copySync(
+  path.join(__dirname, 'rollup-browser-test.html'),
+  path.join(docsDir, 'browser', 'rollup-browser-test.html')
+);
+fs.copySync(path.join(__dirname, 'dist/browser'), path.join(docsDir, 'browser/dist'));
