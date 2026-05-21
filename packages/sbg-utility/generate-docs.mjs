@@ -150,7 +150,7 @@ for (const file of sourceFiles) {
   }
 }
 
-// write an index (readme.md) into docs with links to all generated docs
+// write an index (index.md) into docs with links to all generated docs
 if (generated.length > 0) {
   let indexMd = '# API Documentation Index\n\n';
   indexMd += 'This index links to all generated API documentation pages.\n\n';
@@ -159,7 +159,7 @@ if (generated.length > 0) {
   for (const g of generated) {
     indexMd += `- [${g.title}](${g.link}) — Source: ${g.source}\n`;
   }
-  fs.writeFileSync(path.join(docsDir, 'readme.md'), indexMd);
+  fs.writeFileSync(path.join(docsDir, 'index.md'), indexMd);
 }
 
 // Copy rollup-browser-test.html,dist/browser/* to docs
