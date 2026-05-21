@@ -90,7 +90,7 @@ Cleans a string with configurable options.
 ### Parameters
 
 - `str`: `string` — - The input string to clean.
-- `options`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/src/utils/string").CleanStringOptions` — - Cleaning options.
+- `options`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/utils/string").CleanStringOptions` — - Cleaning options.
 
 ### Returns
 

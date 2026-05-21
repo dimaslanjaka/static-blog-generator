@@ -15,7 +15,7 @@ Returns true if the value is:
 ### Parameters
 
 - `value`: `unknown` — - The value to check
-- `options`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/src/utils/empty").EmptyOptions` — - Configuration options
+- `options`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/utils/empty").EmptyOptions` — - Configuration options
 
 ### Returns
 
@@ -32,7 +32,7 @@ This is the inverse of isEmpty(). Returns true if the value is not empty.
 ### Parameters
 
 - `value`: `unknown` — - The value to check
-- `options`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/src/utils/empty").EmptyOptions` — - Configuration options
+- `options`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/utils/empty").EmptyOptions` — - Configuration options
 
 ### Returns
 

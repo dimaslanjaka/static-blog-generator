@@ -20,7 +20,7 @@ calculate sha1sum of file
 
 ### Parameters
 
-- `options`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/src/gulp-utils/gulp-cache").gulpCachedOpt`
+- `options`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/gulp-utils/gulp-cache").gulpCachedOpt`
 
 ### Returns
 

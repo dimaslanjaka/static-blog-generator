@@ -7,7 +7,7 @@
 
 ### Returns
 
-`Promise<Record<string, import("D:/Repositories/sbg-utility/packages/sbg-utility/src/symbols/unicode-symbols").UnicodeSymbol> | undefined>`
+`Promise<Record<string, import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/symbols/unicode-symbols").UnicodeSymbol> | undefined>`
 
 ## getUnicodeSymbolByName
 

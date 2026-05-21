@@ -4,10 +4,10 @@
 
 ### Parameters
 
-- `loader`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/nunjucks/index").ILoader | import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/nunjucks/index").ILoader[] | null | undefined`
-- `opts`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/nunjucks/index").ConfigureOptions | undefined`
+- `loader`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/nunjucks/index").ILoader | import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/nunjucks/index").ILoader[] | null | undefined`
+- `opts`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/nunjucks/index").ConfigureOptions | undefined`
 
 ### Returns
 
-`import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/nunjucks/index").Environment`
+`import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/nunjucks/index").Environment`
 

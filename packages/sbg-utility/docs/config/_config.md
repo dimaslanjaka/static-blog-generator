@@ -21,11 +21,11 @@ Config setter
 
 ### Parameters
 
-- `obj`: `Record<string, any> | import("D:/Repositories/sbg-utility/packages/sbg-utility/src/config/_config").ProjConf`
+- `obj`: `Record<string, any> | import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/config/_config").ProjConf`
 
 ### Returns
 
-`import("D:/Repositories/sbg-utility/packages/sbg-utility/src/config/_config").ProjConf`
+`import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/config/_config").ProjConf`
 
 ## getConfig
 
@@ -38,7 +38,7 @@ Config getter
 
 ### Returns
 
-`import("D:/Repositories/sbg-utility/packages/sbg-utility/src/config/_config").ProjConf`
+`import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/config/_config").ProjConf`
 
 ## deployConfig
 

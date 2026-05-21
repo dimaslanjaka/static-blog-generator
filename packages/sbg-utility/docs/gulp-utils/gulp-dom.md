@@ -20,7 +20,7 @@ const gulp = require('gulp');
 
 ### Parameters
 
-- `mutator`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/src/gulp-utils/gulp-dom").GulpDomCallback` — callback
+- `mutator`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/gulp-utils/gulp-dom").GulpDomCallback` — callback
 
 ### Returns
 

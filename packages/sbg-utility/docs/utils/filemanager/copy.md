@@ -9,7 +9,7 @@ copy file/folder recursively
 
 - `src`: `string`
 - `dest`: `string`
-- `options`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/fs-extra/index").CopyOptions | undefined`
+- `options`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/fs-extra/index").CopyOptions | undefined`
 
 ### Returns
 

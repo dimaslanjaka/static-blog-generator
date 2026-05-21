@@ -12,5 +12,5 @@ increment version range
 
 ### Returns
 
-`import("D:/Repositories/sbg-utility/packages/sbg-utility/src/utils/semver").semver`
+`import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/utils/semver").semver`
 

@@ -8,9 +8,9 @@ Sitemap Crawler Asynchronous
 ### Parameters
 
 - `link`: `string | string[]`
-- `opts`: `import("D:/Repositories/sbg-utility/packages/sbg-utility/src/sitemap-crawler/sitemap-crawler").Opt | undefined`
+- `opts`: `import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/src/sitemap-crawler/sitemap-crawler").Opt | undefined`
 
 ### Returns
 
-`import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/bluebird/index")<Record<string, string[]>>`
+`import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/bluebird/index")<Record<string, string[]>>`
 

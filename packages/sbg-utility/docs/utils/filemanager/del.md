@@ -12,5 +12,5 @@ delete folder/file async
 
 ### Returns
 
-`import("D:/Repositories/sbg-utility/packages/sbg-utility/node_modules/@types/bluebird/index")<void | Error>`
+`import("/home/runner/work/static-blog-generator/static-blog-generator/packages/sbg-utility/node_modules/@types/bluebird/index")<void | Error>`
 
