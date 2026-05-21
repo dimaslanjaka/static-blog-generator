@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { EventEmitter } from 'events';
 import { sync as writeSync } from 'write-file-atomic';
+import { Nullable } from '../globals.js';
 
 const KEY_FOR_EMPTY_STRING = '---.EMPTY_STRING.---'; // Chose something that no one is likely to ever use
 
@@ -21,8 +22,8 @@ function _rm(target: string): void {
   }
 }
 
-function _escapeKey(key: string): string {
-  if (key === '') {
+function _escapeKey(key: string | number): string {
+  if (String(key) === '') {
     return KEY_FOR_EMPTY_STRING;
   } else {
     return `${key}`;
@@ -81,7 +82,7 @@ class LocalStorage extends EventEmitter {
   private _eventUrl!: string;
   private readonly _QUOTA_EXCEEDED_ERR: typeof QUOTA_EXCEEDED_ERR = QUOTA_EXCEEDED_ERR;
 
-  constructor(_location: string, quota: number = 5 * 1024 * 1024) {
+  constructor(_location: string = './tmp/sbgUtilityLocalStorage', quota: number = 5 * 1024 * 1024) {
     super();
     this._location = path.resolve(_location);
     this._quota = quota;
@@ -170,7 +171,7 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  private _sync(): void {
+  _sync(): void {
     this._bytesInUse = 0;
     this.length = 0;
     const _keys = fs.readdirSync(this._location);
@@ -189,13 +190,13 @@ class LocalStorage extends EventEmitter {
     this.length = _keys.length;
   }
 
-  setItem(key: string, value: any): void {
+  setItem(key: Nullable<string | number>, value: any): void {
     const hasListeners = this.listenerCount('storage') > 0;
     let oldValue: string | null = null;
     if (hasListeners) {
-      oldValue = this.getItem(key);
+      oldValue = this.getItem(String(key));
     }
-    key = _escapeKey(key);
+    key = _escapeKey(String(key));
     const encodedKey = encodeURIComponent(key)
       .replace(/[!'()]/g, escape)
       .replace(/\*/g, '%2A');
@@ -228,8 +229,8 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  getItem(key: string): string | null {
-    key = _escapeKey(key);
+  getItem(key: Nullable<string | number>): string | null {
+    key = _escapeKey(String(key));
     const metaKey = this._metaKeyMap[key];
     if (metaKey) {
       const filename = path.join(this._location, metaKey.key);
@@ -249,8 +250,8 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  removeItem(key: string): void {
-    key = _escapeKey(key);
+  removeItem(key: Nullable<string | number>): void {
+    key = _escapeKey(String(key));
     const metaKey = this._metaKeyMap[key];
     if (metaKey) {
       const hasListeners = this.listenerCount('storage') > 0;

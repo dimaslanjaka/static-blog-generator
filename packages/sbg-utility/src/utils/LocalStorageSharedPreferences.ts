@@ -1,5 +1,5 @@
-import { LocalStorage as NodeLocalStorage } from './LocalStorage.js';
 import BasePreferences from './BasePreferences.js';
+import { LocalStorage as NodeLocalStorage } from './LocalStorage.js';
 
 // Polyfill for localStorage in Node.js using node-localstorage
 
@@ -7,7 +7,7 @@ declare let localStorage: Storage;
 if (typeof localStorage === 'undefined' || localStorage === null) {
   // Only assign polyfill in Node.js
   if (typeof process !== 'undefined' && process.versions && process.versions.node) {
-    globalThis.localStorage = new NodeLocalStorage('./sbgUtilityLocalStorage') as any;
+    globalThis.localStorage = new NodeLocalStorage('./tmp/sbgUtilityLocalStorage') as any;
   }
 }
 

@@ -4,4 +4,4 @@ All collections and helpers nodejs/javascript used by other modules.
 
 ## Documentation
 
-- [Array helpers](docs/arrays.md)
+Read documentation on [docs/](docs/)

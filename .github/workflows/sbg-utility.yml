@@ -12,9 +12,6 @@ on:
       - '**/package.json'
       - '**/yarn.lock'
       - '**/gulpfile*'
-  pull_request:
-    types:
-      - closed
   workflow_dispatch:
   workflow_call:
     secrets:
@@ -178,17 +175,21 @@ jobs:
 
       - name: 📦 Package Build Artifacts
         working-directory: packages/sbg-utility
-        run: |
-          npm run pack -- --commit
-          npm run pack
+        run: yarn run pack
+
+      - name: 📚 Generate Documentation
+        working-directory: packages/sbg-utility
+        run: yarn run docs
 
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
-        run: git add release
+        run: git add release docs
 
       - name: 📤 Commit and Push Changes (only sbg-utility)
         working-directory: packages/sbg-utility
         run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
           if [ $(git status --porcelain -- release | wc -l) -gt "0" ]; then
             git commit \
               -m "build(release): update generated release artifacts" \

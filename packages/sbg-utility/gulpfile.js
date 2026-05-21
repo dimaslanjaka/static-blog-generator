@@ -1,4 +1,4 @@
-import crossSpawn from 'cross-spawn';
+import crossSpawn, { spawnAsync } from 'cross-spawn';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import gulp from 'gulp';
@@ -77,7 +77,7 @@ async function tsc() {
   if (!fs.existsSync(configJsonPath)) {
     await populateConfig();
   }
-  await crossSpawn.spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.node.json'], {
+  await spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.node.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
@@ -117,7 +117,7 @@ gulp.task('build-browser', async function () {
   if (!fs.existsSync(configJsonPath)) {
     await populateConfig();
   }
-  await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-browser.js')], {
+  await spawnAsync('node', [path.join(__dirname, 'rollup-browser.js')], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
@@ -202,6 +202,8 @@ gulp.task('index-builder', async function () {
             if (code !== 0) reject(new Error(`Process exited with code ${code}`));
             else resolve();
           });
+        }).catch((error) => {
+          console.error(`Error processing ${file}:`, error);
         });
       }
     } catch (error) {

@@ -27,7 +27,7 @@ const config = {
     '!**/vendor/**',
     '!**/test/**',
     '!**/*.test.{js,ts}',
-    '!**/*.builder.ts',
+    '!**/*.builder.*',
     '!**/*.runner.ts',
     '!**/.deploy_git/**'
   ],

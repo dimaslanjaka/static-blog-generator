@@ -15,7 +15,6 @@ export interface Opt {
    * keep query url ?key=value
    */
   keepQuery?: boolean;
-
   /**
    * Crawl internal links [n] times
    * * **WARNING** dont put `Infinite`

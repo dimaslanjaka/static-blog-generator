@@ -30,7 +30,7 @@ const withCoverage: JestConfigWithTsJest = {
     '!**/vendor/**',
     '!**/test/**',
     '!**/*.test.{js,ts}',
-    '!**/*.builder.ts',
+    '!**/*.builder.*',
     '!**/.deploy_git/**'
   ],
   roots: [`<rootDir>/test`],
