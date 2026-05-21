@@ -175,6 +175,7 @@ export async function compileDeclarations() {
 
     fs.rmSync(cjsDir, { recursive: true, force: true });
     process.stdout.write(colors.green(`\n✔ Removed temporary ${path.relative(process.cwd(), cjsDir)}`));
+    process.stdout.write(colors.green(`\n✔ All done!\n`));
   } catch (err) {
     process.stdout.write(colors.yellow(`\n⚠️ Failed to remove temporary declaration dirs: ${err.message}`));
   }
