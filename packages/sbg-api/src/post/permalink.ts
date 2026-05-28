@@ -22,7 +22,7 @@ export function parsePermalink(
     /**
      * post created date
      */
-    date: moment.MomentInput;
+    date: momentlib.MomentInput;
     /**
      * post title
      */
