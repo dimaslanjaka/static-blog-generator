@@ -1,0 +1,38 @@
+[install]
+# Bun always uses node_modules linker (no PnP equivalent needed)
+# nodeLinker: node-modules (implicit in Bun)
+
+# Equivalent to: enableScripts: true (default behavior)
+scripts = true
+
+# Similar to: enableImmutableInstalls: false (default)
+frozenLockfile = false
+
+# Dependency groups (closest mapping from Yarn behavior)
+dev = true
+optional = true
+peer = true
+
+# Safer CI option (optional toggle you can enable manually)
+# frozenLockfile = true
+
+# Bun does NOT support:
+# - cacheFolder
+# - checksumBehavior
+# - nmHoistingLimits
+# - nmMode
+# - installStatePath
+# - networkConcurrency
+# - cloneConcurrency
+# - compressionLevel
+# - patchFolder
+# - enableGlobalCache
+# - enableTransparentWorkspaces (always on in Bun)
+# - nmSelfReferences (always supported when applicable)
+
+[run]
+# Optional: improve script execution behavior
+silent = false
+
+# You can isolate env for scripts (useful in CI)
+# bun run behavior defaults are already optimized
