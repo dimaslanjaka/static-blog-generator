@@ -12,17 +12,11 @@
     /* Basic Options */
     "target": "ES2020",
     "module": "ESNext",
-    "lib": [
-      "ES2019",
-      "ES2020",
-      "DOM",
-      "ES6"
-    ],
+    "lib": ["ES2019", "ES2020", "DOM", "ES6"],
     "outDir": "./dist",
     "allowJs": true,
     "checkJs": false,
     "resolveJsonModule": true,
-    "downlevelIteration": true,
     "noImplicitAny": false,
     /* Strict Type-Checking Options */
     "strict": true,
@@ -35,15 +29,7 @@
     "forceConsistentCasingInFileNames": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "typeRoots": [
-      "./typings",
-      "./node_modules/@types",
-      "./node_modules/nodejs-package-types/typings"
-    ]
+    "typeRoots": ["./typings", "./node_modules/@types", "./node_modules/nodejs-package-types/typings"]
   },
-  "exclude": [
-    "**/dist/**",
-    "**/node_modules/**",
-    "**/tmp/**"
-  ]
+  "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**"]
 }
