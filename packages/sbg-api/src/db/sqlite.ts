@@ -3,9 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export type QueryParams = Record<string, any>;
+export type SQLiteDatabase = InstanceType<typeof Database>;
 export const DEFAULT_DB_PATH = path.join(process.cwd(), 'data', 'database', 'db.sqlite');
 export class SQLite {
-  private db: Database.Database;
+  private db: SQLiteDatabase;
 
   constructor(dbPath: string = DEFAULT_DB_PATH) {
     const dir = path.dirname(dbPath);
@@ -86,7 +87,7 @@ export class SQLite {
   }
 
   // Raw access if needed (escape hatch)
-  raw() {
+  raw(): SQLiteDatabase {
     return this.db;
   }
 }
