@@ -1,4 +1,8 @@
-Yes — that design is absolutely possible, and it’s actually a very solid hybrid approach: **static site generator (SSG) + SQLite as a local content/cache layer**, similar to a “WordPress-like brain, static output body”.
+---
+applyTo: '**/*'
+---
+
+**static site generator (SSG) + SQLite as a local content/cache layer**, similar to a “WordPress-like brain, static output body”.
 
 You’re basically combining:
 
@@ -125,7 +129,7 @@ Use something like:
   * syntax highlight
   * slug generator
 
-Flow:
+## Markdown → HTML flow:
 
 ```
 markdown file
@@ -139,6 +143,29 @@ Markdown → HTML
 inject into theme
    ↓
 write static file
+```
+
+With caching, you can skip the Markdown → HTML step if the file hasn’t changed.
+
+```
+post.md changed
+  ↓
+sync DB
+  ↓
+extract dependencies
+  ↓
+find affected targets:
+    - tag: nodejs
+    - category: backend
+    - archive: 2026-05
+    - home
+  ↓
+rebuild ONLY:
+    - post page
+    - tag/nodejs page
+    - category/backend page
+    - archive/2026-05 page
+    - homepage
 ```
 
 ---
@@ -183,31 +210,36 @@ This is how modern SSGs stay fast.
 ```
 src/
   core/
-    builder.ts
-    renderer.ts
-    markdown.ts
-    watcher.ts
+    builder.ts        ← incremental build engine (main entry)
+    scanner.ts        ← file discovery
+    hasher.ts         ← file hash logic
+    renderer.ts       ← template rendering (EJS/Nunjucks/Pug)
+    routes.ts         ← URL generation logic
+    markdown.ts       ← markdown → HTML pipeline
+    watcher.ts        ← dev mode file watcher
 
   db/
-    sqlite.ts
-    schema.sql
+    sqlite.ts         ← SQLite helper
+    schema.sql        ← full production schema
 
   loaders/
-    posts.ts
-    pages.ts
+    posts.ts          ← posts loader + sync logic
+    pages.ts          ← pages loader + sync logic
+    sync.ts           ← shared sync logic (IMPORTANT)
 
   themes/
-    loader.ts
+    loader.ts         ← theme resolver + engine detection
 
 source/
   _posts/
-  about.md
+  pages/
 
 themes/
   default/
-    layout.ejs
-    post.ejs
-    page.ejs
+    layouts/
+      post.ejs
+      page.ejs
+      layout.ejs
     assets/
 
 public/
