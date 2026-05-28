@@ -5,7 +5,7 @@ import * as glob from 'glob';
 import path from 'path';
 import { dts } from 'rollup-plugin-dts';
 import { fileURLToPath } from 'url';
-import { externalPackages, tsconfig } from './rollup.utils.js';
+import { chunkFileNamesWithExt, entryFileNamesWithExt, externalPackagesFilter, tsconfig } from './rollup.utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -51,24 +51,27 @@ const _partials = {
   input: inputs,
   output: [
     // bundle .js as ESM
-    {
-      dir: 'dist',
-      format: 'esm',
-      sourcemap: false,
-      preserveModules: true,
-      exports: 'named',
-      globals: {
-        hexo: 'hexo'
-      }
-    },
+    // {
+    //   dir: 'dist',
+    //   format: 'esm',
+    //   sourcemap: false,
+    //   preserveModules: true,
+    //   entryFileNames: entryFileNamesWithExt('mjs'),
+    //   chunkFileNames: chunkFileNamesWithExt('mjs'),
+    //   exports: 'named',
+    //   globals: {
+    //     hexo: 'hexo'
+    //   }
+    // },
     // bundle .cjs as CommonJS
     {
       dir: 'dist',
       format: 'cjs',
       sourcemap: false,
       preserveModules: true,
+      entryFileNames: entryFileNamesWithExt('cjs'),
+      chunkFileNames: chunkFileNamesWithExt('cjs'),
       exports: 'named',
-      entryFileNames: '[name].cjs',
       globals: {
         hexo: 'hexo'
       }
@@ -79,15 +82,16 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
+      entryFileNames: entryFileNamesWithExt('mjs'),
+      chunkFileNames: chunkFileNamesWithExt('mjs'),
       exports: 'named',
-      entryFileNames: '[name].mjs',
       globals: {
         hexo: 'hexo'
       }
     }
   ],
   plugins,
-  external: externalPackages // External dependencies package name to exclude from bundle
+  external: externalPackagesFilter // External dependencies package name to exclude from bundle
 };
 
 /**
@@ -97,15 +101,15 @@ const _onefile = {
   input: 'src/index.ts',
   output: [
     // bundle .js as ESM
-    {
-      file: 'dist/index.js',
-      format: 'esm',
-      sourcemap: false,
-      globals: {
-        hexo: 'hexo'
-      },
-      exports: 'named'
-    },
+    // {
+    //   file: 'dist/index.js',
+    //   format: 'esm',
+    //   sourcemap: false,
+    //   globals: {
+    //     hexo: 'hexo'
+    //   },
+    //   exports: 'named'
+    // },
     // bundle .cjs as CommonJS
     {
       file: 'dist/index.cjs',
@@ -128,7 +132,7 @@ const _onefile = {
     }
   ],
   plugins,
-  external: externalPackages // External dependencies package name to exclude from bundle
+  external: externalPackagesFilter // External dependencies package name to exclude from bundle
 };
 
 /**

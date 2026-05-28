@@ -139,6 +139,12 @@ export function chunkFileNamesWithExt(ext) {
  * @returns {boolean} True if the module should be external, false if it should be bundled.
  */
 export function externalPackagesFilter(source, importer, isResolved, debug = false) {
+  // Ensure log directory exists
+  if (!fs.existsSync('tmp/build')) {
+    fs.mkdirSync('tmp/build', { recursive: true });
+  }
+  fs.writeFileSync('tmp/build/externalPackagesFilter.log', '');
+
   function getPackageNameFromSource(source) {
     // Handle absolute paths (Windows/Unix)
     const nm = /node_modules[\\/]+([^\\/]+)(?:[\\/]+([^\\/]+))?/.exec(source);
@@ -176,10 +182,6 @@ export function externalPackagesFilter(source, importer, isResolved, debug = fal
     if (debug) {
       console.log(treeLog);
     } else {
-      // Ensure log directory exists
-      if (!fs.existsSync('tmp/build')) {
-        fs.mkdirSync('tmp/build', { recursive: true });
-      }
       // Write log to file (preserve ANSI color codes)
       fs.appendFileSync('tmp/build/externalPackagesFilter.log', treeLog + '\n');
     }
