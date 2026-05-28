@@ -118,6 +118,7 @@
     "@types/async": "^3.2.24",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/bluebird": "^3.5.42",
     "@types/debug": "^4",
     "@types/fs-extra": "^11",
