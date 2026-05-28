@@ -41,7 +41,7 @@
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.cjs",
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
-    "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "prebuild": "node src/index.builder.mjs",
     "build": "gulp build",

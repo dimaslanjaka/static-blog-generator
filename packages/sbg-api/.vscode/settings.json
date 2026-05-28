@@ -55,73 +55,17 @@
   "code-runner.cwd": "${workspaceFolder}",
   "code-runner.executorMap": {
     "javascript": "node",
-    "typescript": "node --no-warnings=ExperimentalWarning --loader ts-node/esm",
-    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "zig": "zig run",
-    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "php": "php",
-    "python": "py -u",
-    "perl": "perl",
-    "perl6": "perl6",
-    "ruby": "ruby",
-    "go": "go run",
-    "lua": "lua",
-    "groovy": "groovy",
-    "powershell": "powershell -ExecutionPolicy ByPass -File",
-    "bat": "cmd /c",
-    "shellscript": "bash",
-    "fsharp": "fsi",
-    "csharp": "scriptcs",
-    "vbscript": "cscript //Nologo",
-    "coffeescript": "coffee",
-    "scala": "scala",
-    "swift": "swift",
-    "julia": "julia",
-    "crystal": "crystal",
-    "ocaml": "ocaml",
-    "r": "Rscript",
-    "applescript": "osascript",
-    "clojure": "lein exec",
-    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
-    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
-    "racket": "racket",
-    "scheme": "csi -script",
-    "ahk": "autohotkey",
-    "autoit": "autoit3",
-    "dart": "dart",
-    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
-    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
-    "haskell": "runghc",
-    "nim": "nim compile --verbosity:0 --hints:off --run",
-    "lisp": "sbcl --script",
-    "kit": "kitc --run",
-    "v": "v run",
-    "sass": "sass --style expanded",
-    "scss": "scss --style expanded",
-    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
-    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "sml": "cd $dir && sml $fileName",
-    "mojo": "mojo run",
-    "erlang": "escript",
-    "spwn": "spwn build",
-    "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
-    "gleam": "gleam run -m $fileNameWithoutExt"
+    "typescript": "node --no-warnings=ExperimentalWarning --loader ts-node/esm"
   },
   "code-runner.executorMapByGlob": {
     "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     "*.mjs": "node --no-warnings=ExperimentalWarning",
     "*.py": "py -u",
-    "*.test.{cjs,js,mjs,ts}": "npm test --",
     "*Test.php": "phpunit --debug --testdox --colors=always",
     "electron-*.ts": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     "rollup.*.{js,cjs,mjs,ts}": "rollup -c",
     "*.sh": "sh",
-    "*.{test,spec}.{js,ts}": "yarn test -- $filenameWithoutExt",
+    "*.{test,spec}.*": "yarn test -- $fileNameWithoutExt"
   },
   "code-runner.ignoreSelection": true,
   "code-runner.respectShebang": false,
@@ -134,7 +78,14 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.ts": "never",
+    "source.addMissingImports.ts": "never",
+    "source.removeUnused.ts": "never",
+    "source.removeUnusedImports": "never",
+    "source.sort.json": "never",
+    "source.sortImports": "never"
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
@@ -156,7 +107,12 @@
     "markdown",
     "json",
     "jsonc",
-    "twig"
+    "twig",
+    "css",
+    "glimmer-js",
+    "glimmer-ts",
+    "svelte",
+    "nunjucks"
   ],
   "eslint.validate": [
     "astro",
@@ -171,7 +127,12 @@
     "markdown",
     "json",
     "jsonc",
-    "twig"
+    "twig",
+    "css",
+    "glimmer-js",
+    "glimmer-ts",
+    "svelte",
+    "nunjucks"
   ],
   "eslint.useESLintClass": true,
   "eslint.useFlatConfig": true,
@@ -216,7 +177,6 @@
   "intelephense.environment.phpVersion": "8.0.0",
   "intelephense.diagnostics.enable": true,
   "intelephense.diagnostics.run": "onSave",
-  // "intelephense.environment.documentRoot": "${workspaceFolder}",
   "intelephense.environment.includePaths": ["./src", "./vendor", "${workspaceFolder}/tests"],
   "intelephense.files.exclude": [
     "**/.DS_Store/**",
@@ -299,6 +259,16 @@
     "PowerShell": {
       "icon": "terminal-powershell",
       "source": "PowerShell"
+    },
+    "Short PowerShell": {
+      "source": "PowerShell",
+      "args": ["-NoExit", "-Command", "function prompt { \"[$((Get-Item .).Name)]> \" }"],
+      "icon": "terminal-powershell"
+    },
+    "Short Command Prompt": {
+      "path": ["${env:windir}\\System32\\cmd.exe"],
+      "args": ["/k", "prompt $p$_$g"],
+      "icon": "terminal-cmd"
     }
   },
   "testing.displayedCoveragePercent": "minimum",
@@ -320,7 +290,6 @@
   "[php]": {
     "editor.defaultFormatter": "junstyle.php-cs-fixer"
   },
-  // --- PHP CS Fixer (auto-formatting) ---
   "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer.phar",
   "php-cs-fixer.executablePathWindows": "${workspaceFolder}/vendor/bin/php-cs-fixer.bat",
   "php-cs-fixer.onsave": false,
@@ -344,7 +313,6 @@
   "php-cs-fixer.allowRisky": true,
   "php-cs-fixer.autoFixByBracket": false,
   "php-cs-fixer.ignorePHPVersion": true,
-  // --- PHPCS (linting) ---
   "phpcs.enable": true,
   "phpcs.executablePath": "./vendor/bin/phpcs.bat",
   "phpcs.standard": "./phpcs.xml",
@@ -391,8 +359,6 @@
   "python.analysis.diagnosticsSource": "Pyright",
   "python.analysis.inlayHints.pytestParameters": true,
   "python.createEnvironment.contentButton": "show",
-  // "python.defaultInterpreterPath": "\\venv\\Scripts\\python.exe",
-  // "python.pythonPath": ".\\venv\\Scripts\\python.exe",
   "python.envFile": "${workspaceFolder}/.env",
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
