@@ -10,3 +10,5 @@ tmp/
 /.yarn*
 yarn.lock
 package-lock.json
+.github/instructions/project.instructions.md
+/data

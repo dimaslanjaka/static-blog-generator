@@ -280,5 +280,10 @@
   "github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
   "chat.agent.enabled": true,
   "chat.agent.networkFilter": false,
-  "chat.checkpoints.showFileChanges": true
+  "chat.checkpoints.showFileChanges": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**dist**": true,
+    "**.cache**": true
+  }
 }

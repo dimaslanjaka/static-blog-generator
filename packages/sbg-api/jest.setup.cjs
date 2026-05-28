@@ -30,8 +30,6 @@ async function main() {
         cwd: __dirname
       }
     );
-
-    console.log('🛠️\tBuild completed.');
   } catch (error) {
     console.error('❌\tBuild failed. ' + (error instanceof Error ? error.message : String(error)));
 
