@@ -23,6 +23,9 @@ def safe_branch_name(name: str) -> str:
 
 
 def find_yarn():
+    if os.name == "nt":
+        return which("yarn.cmd") or which("yarn")
+
     return which("yarn") or which("yarn.cmd")
 
 
@@ -39,7 +42,9 @@ def empty_file(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--up", nargs=argparse.REMAINDER, help="Run yarn up with packages")
+    parser.add_argument(
+        "--up", nargs=argparse.REMAINDER, help="Run yarn up with packages"
+    )
     args = parser.parse_args()
 
     branch = get_branch_name()
