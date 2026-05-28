@@ -1,4 +1,4 @@
-source/_posts
+source/
 .deploy_git
 tmp
 node_modules

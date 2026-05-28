@@ -1,0 +1,7 @@
+/_posts/*
+!/_posts/post-asset-link*
+!/_posts/post-asset-link/**/*
+!/_posts/*.md
+/_posts/readme.md
+/_posts/license.md
+/index.md

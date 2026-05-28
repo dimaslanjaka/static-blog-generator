@@ -1,0 +1,9 @@
+div.different {
+  background-color: #f0f8ff; /* Light blue background */
+  border: 2px dashed #ff4500; /* Orange dashed border */
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  border-radius: 10px;
+}
