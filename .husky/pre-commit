@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+# make cygwin bin as priority
+export PATH="node_modules/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+
+case `uname` in
+  *CYGWIN*) (set -o igncr) 2>/dev/null && set -o igncr;; # cygwin encoding fix
+esac
+
+ROOT_GIT=$(git rev-parse --show-toplevel)
+
+# Copy root readme into static-blog-generator package when present
+if [ -f "${ROOT_GIT}/readme.md" ]; then
+    cp "${ROOT_GIT}/readme.md" "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null || true
+    git add "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null || true
+fi
+
+npx lint-staged
+
+# Exit silently if git-lfs is not installed
+command -v git-lfs >/dev/null 2>&1 || exit 0
+
+# Only run if LFS is configured in this repo
+if git config --local --get-regexp '^filter\.lfs\.' >/dev/null 2>&1; then
+    git lfs pre-push "$@"
+fi
