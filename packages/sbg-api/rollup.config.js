@@ -5,7 +5,7 @@ import * as glob from 'glob';
 import path from 'path';
 import { dts } from 'rollup-plugin-dts';
 import { fileURLToPath } from 'url';
-import { external, tsconfig } from './rollup.utils.js';
+import { externalPackages, tsconfig } from './rollup.utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -87,7 +87,7 @@ const _partials = {
     }
   ],
   plugins,
-  external // External dependencies package name to exclude from bundle
+  external: externalPackages // External dependencies package name to exclude from bundle
 };
 
 /**
@@ -128,7 +128,7 @@ const _onefile = {
     }
   ],
   plugins,
-  external // External dependencies package name to exclude from bundle
+  external: externalPackages // External dependencies package name to exclude from bundle
 };
 
 /**
