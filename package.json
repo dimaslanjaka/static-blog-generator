@@ -86,14 +86,13 @@
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "8.59.3",
-    "typescript-transform-paths": "^3.5.6"
+    "typescript-transform-paths": "^3.5.6",
+    "upath": "^3.0.7"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "test"
-    ]
-  },
+  "workspaces": [
+    "packages/*",
+    "test"
+  ],
   "packageManager": "yarn@4.13.0",
   "engines": {
     "node": ">=16"
@@ -110,6 +109,7 @@
     "binary-collections": "https://github.com/dimaslanjaka/bin/raw/fa22222449a7b264007b326bc66007413dba1d4a/releases/bin.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/87e0c2c3fbcd588fdcec75a59dbca31f9d913e4b/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/2ed1250d701369b8235a02b9af834bbfc62644a0/release/hexo-shortcodes.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/78b09a1f799430fb251c1b438ec56ce7957674f4/release/cross-spawn.tgz"
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/78b09a1f799430fb251c1b438ec56ce7957674f4/release/cross-spawn.tgz",
+    "@dimaslanjaka/eslint-base-config": "https://github.com/dimaslanjaka/eslint-base-config/raw/69ca996fdeaac42c93dd590124996eff58b5d6c2/release/dimaslanjaka-eslint-base-config.tgz"
   }
 }
