@@ -1,0 +1,111 @@
+#!/bin/bash
+set -euo pipefail
+
+# --------------------------------------------------
+# Detect OS and normalize platform
+# --------------------------------------------------
+UNAME="$(uname -s 2>/dev/null || echo unknown)"
+
+case "$UNAME" in
+  Linux*)   PLATFORM="linux" ;;
+  Darwin*)  PLATFORM="macos" ;;
+  CYGWIN*|MINGW*|MSYS*) PLATFORM="windows" ;;
+  *)
+    echo "Unsupported OS: $UNAME"
+    exit 1
+    ;;
+esac
+
+# --------------------------------------------------
+# Resolve paths
+# --------------------------------------------------
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+CWD="$(dirname "$SCRIPT_DIR")"
+
+if [ ! -d "$CWD" ]; then
+  echo "Directory $CWD does not exist."
+  exit 1
+fi
+
+# Prefer venv over .venv
+if [ -d "$CWD/venv" ] || [ ! -d "$CWD/.venv" ]; then
+  VENV_PATH="$CWD/venv"
+else
+  VENV_PATH="$CWD/.venv"
+fi
+
+USER="www-data"
+
+# --------------------------------------------------
+# Helpers
+# --------------------------------------------------
+ensure_python3_shim_unix() {
+  if [ -f "$VENV_PATH/bin/python" ] && [ ! -f "$VENV_PATH/bin/python3" ]; then
+    echo "Creating python3 symlink..."
+    ln -s python "$VENV_PATH/bin/python3"
+  fi
+}
+
+ensure_python3_shim_windows() {
+  if [ -f "$VENV_PATH/Scripts/python.exe" ] && [ ! -f "$VENV_PATH/Scripts/python3.exe" ]; then
+    echo "Creating python3.exe shim..."
+    cp "$VENV_PATH/Scripts/python.exe" "$VENV_PATH/Scripts/python3.exe"
+  fi
+}
+
+resolve_python_bin_unix() {
+  if [ -x "$VENV_PATH/bin/python3" ]; then
+    echo "$VENV_PATH/bin/python3"
+  else
+    echo "$VENV_PATH/bin/python"
+  fi
+}
+
+resolve_python_bin_windows() {
+  if [ -x "$VENV_PATH/Scripts/python3.exe" ]; then
+    echo "$VENV_PATH/Scripts/python3.exe"
+  else
+    echo "$VENV_PATH/Scripts/python.exe"
+  fi
+}
+
+# --------------------------------------------------
+# Platform logic
+# --------------------------------------------------
+case "$PLATFORM" in
+  linux|macos)
+    if [ ! -d "$VENV_PATH" ] || [ ! -f "$VENV_PATH/bin/activate" ]; then
+      echo "Creating virtual environment..."
+      python3 -m venv "$VENV_PATH"
+      echo "Virtual environment created."
+    fi
+
+    ensure_python3_shim_unix
+
+    PYTHON_BIN="$(resolve_python_bin_unix)"
+
+    # Optional permissions fix (Linux + nginx only)
+    if [ "$PLATFORM" = "linux" ] && command -v nginx >/dev/null; then
+      if command -v sudo >/dev/null; then
+        sudo -n chown -R "$USER:$USER" "$VENV_PATH" >/dev/null 2>&1 || true
+        sudo -n chmod 755 "$VENV_PATH/bin"/* >/dev/null 2>&1 || true
+      fi
+    fi
+
+    "$PYTHON_BIN" "$@"
+    ;;
+
+  windows)
+    if [ ! -d "$VENV_PATH" ] || [ ! -f "$VENV_PATH/Scripts/activate" ]; then
+      echo "Creating virtual environment..."
+      python3.exe -m venv "$VENV_PATH"
+      echo "Virtual environment created."
+    fi
+
+    ensure_python3_shim_windows
+
+    PYTHON_BIN="$(resolve_python_bin_windows)"
+    "$PYTHON_BIN" "$@"
+    ;;
+
+esac
