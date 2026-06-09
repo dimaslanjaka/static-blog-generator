@@ -14,13 +14,13 @@ const options = {
   skipMissing: false, // skip calculation of missing dependencies
   ignorePatterns: [
     // files matching these patterns will be ignored
-    'sandbox',
-    'dist',
-    'bower_components',
-    'node_modules',
-    'docs',
-    'exclude',
-    'test'
+    '**/sandbox',
+    '**/dist',
+    '**/bower_components',
+    '**/node_modules',
+    '**/docs',
+    '**/exclude',
+    '**/test'
   ],
   ignoreMatches: [
     // ignore dependencies that matches these globs
@@ -36,10 +36,10 @@ const options = {
   ],
   parsers: {
     // the target parsers
-    'src/**/*.ts': depcheck.parser.typescript,
-    'src/**/*.js': depcheck.parser.es6,
-    'src/**/*.jsx': depcheck.parser.jsx,
-    'src/**/*.sass': depcheck.parser.sass
+    '**/*.ts': depcheck.parser.typescript,
+    '**/*.js': depcheck.parser.es6,
+    '**/*.jsx': depcheck.parser.jsx,
+    '**/*.sass': depcheck.parser.sass
   },
   detectors: [
     // the target detectors

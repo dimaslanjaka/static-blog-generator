@@ -107,9 +107,14 @@
     }
   },
   "resolutions": {
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/ff700df47d98f3430bb95f2395f69c5282161eb5/releases/bin.tgz",
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/1ef47aa929ab953bdd7a4b02f067d6b312ba2cde/release/hexo-renderers.tgz",
-    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/2ed1250d701369b8235a02b9af834bbfc62644a0/release/hexo-shortcodes.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/4975b3788e43d687b6dfc525ad5e3972e5868872/release/cross-spawn.tgz"
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/raw/refs/heads/through2/release/types-through2.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/e48db3235351bbcb9394b21766b2d477cc6b7dd2/release/cross-spawn.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/4e7f8475eafa0974c170893de354026967a71776/release/git-command-helper.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/1ca385787f7287155b547c5b97d5ffd5bcfab482/packages/sbg-utility/release/sbg-utility.tgz",
+    "@dimaslanjaka/eslint-base-config": "https://github.com/dimaslanjaka/eslint-base-config/raw/94dc3bed894d019a216b47d9bf0413f7cfdcd45c/release/dimaslanjaka-eslint-base-config.tgz",
+    "ai-toolkit": "https://github.com/dimaslanjaka/ai-toolkit/raw/633040ea8a63b7f93f48650bcd835f525b8ed260/release/ai-toolkit.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/2e47e25ee07dfc2da899fb068198119f439df469/releases/bin.tgz",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/87e0c2c3fbcd588fdcec75a59dbca31f9d913e4b/release/hexo-renderers.tgz",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/2ed1250d701369b8235a02b9af834bbfc62644a0/release/hexo-shortcodes.tgz"
   }
 }
